@@ -1,0 +1,10 @@
+---
+- name: Ansible VS Code Extension by Red Hat
+  ansible.builtin.shell: code --install-extension redhat.ansible
+  args:
+    creates: "{{ ansible_env.HOME }}/.vscode/extensions/redhat.ansible-*"
+
+- name: Install the Ansible development package
+  community.general.pipx:
+    name: ansible-dev-tools
+#pipx install ansible-dev-tools
